@@ -340,7 +340,7 @@ v0 = sqrt((x1-x0)*-2a)
 		ctx.beginPath();
 		ctx.lineWidth = WD*2;
 		ctx.moveTo(this.px, this.py);
-		ctx.lineTo(this.xX, this.y);
+		ctx.lineTo(xX, this.y);
 		ctx.strokeStyle = this.color;
 		ctx.stroke();
 
