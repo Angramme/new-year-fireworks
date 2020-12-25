@@ -329,21 +329,22 @@ v0 = sqrt((x1-x0)*-2a)
 	draw(ctx){
 		const WD = 2.5;
 
+		const xX = this.x + Math.sin(this.y*this.spiral_S)*this.spiral_F;
+
 		ctx.beginPath();
 		ctx.arc(
-			this.x + Math.sin(this.y*this.spiral_S)*this.spiral_F, 
-			this.y, WD, 0, Math.PI*2);
+			xX, this.y, WD, 0, Math.PI*2);
 		ctx.fillStyle = this.color;
 		ctx.fill();
 
 		ctx.beginPath();
 		ctx.lineWidth = WD*2;
 		ctx.moveTo(this.px, this.py);
-		ctx.lineTo(this.x, this.y);
+		ctx.lineTo(this.xX, this.y);
 		ctx.strokeStyle = this.color;
 		ctx.stroke();
 
-		this.px = this.x;
+		this.px = xX;
 		this.py = this.y;
 	}
 	getRemainingTime(){
